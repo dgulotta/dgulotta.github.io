@@ -1,0 +1,13 @@
+dt {
+	margin-top: .5ex;
+	margin-bottom: .5ex;
+	font-weight: bold;
+}
+
+table {
+	border-spacing: 1em 1px;
+}
+
+table ul {
+	list-style-type: none;
+}

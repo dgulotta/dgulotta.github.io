@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Answer Checker</title>
+<script type="text/javascript">
+const cyrb53 = function(str, seed = 0) {
+    let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
+    for (let i = 0, ch; i < str.length; i++) {
+        ch = str.charCodeAt(i);
+        h1 = Math.imul(h1 ^ ch, 2654435761);
+        h2 = Math.imul(h2 ^ ch, 1597334677);
+    }
+    h1 = Math.imul(h1 ^ (h1>>>16), 2246822507) ^ Math.imul(h2 ^ (h2>>>13), 3266489909);
+    h2 = Math.imul(h2 ^ (h2>>>16), 2246822507) ^ Math.imul(h1 ^ (h1>>>13), 3266489909);
+    return 4294967296 * (2097151 & h2) + (h1>>>0);
+};
+
+const answers = {
+	0x110b228ce64e4c: 'Be a Star!',
+	0x14bed62cef4e94: 'Bookshelves',
+	0x0e14eb1e1e4e0b: 'Cross Words',
+	0x111b36d50faccb: 'Denizen of the Deep',
+	0x0088197f54bbca: 'Eh?',
+	0x15e134c4e6be86: 'Everybody Lives',
+	0x0346b35c5384bd: 'Falling Words',
+	0x180a110e07058b: 'Feeling Bluefin',
+	0x0c367b9d4a802f: 'Funny Shapes',
+	0x13cb014f68bfdc: 'Life is Booty-ful',
+	0x0dbb1533691660: 'Memory Lane',
+	0x0556e44516839d: 'Munchies',
+	0x0a190def5f99fb: 'No Pluto',
+	0x11a33a3ae560c2: 'Not All There',
+	0x18f7e00c86c9cb: 'Rectangles',
+	0x1d456426afab47: 'Rid Fill',
+	0x0516d077e11d7c: 'Sinister Directions',
+	0x12ec1e3359911b: 'Skypers Typing',
+	0x0205c36b7e1010: 'The Darkness',
+	0x0d698b594950f9: 'The Duck Konundrum',
+	0x14b082302756e2: 'The Last Airbender',
+	0x1a439ca70d5e7a: "We'll Get There When We Get There"
+}
+
+function submit_answer(e) {
+	e.preventDefault();
+	const ans = (new FormData(e.target)).get('answer').toUpperCase();
+	const cleaned = ans.replace(/\W/g, '');
+	const hash = cyrb53(cleaned);
+	trailing = (hash in answers) ?
+		' is correct for ' + answers[hash] :
+		' is incorrect ';
+	document.getElementById('response').innerText = ans + trailing;
+	//console.log(cleaned + ': ' + hash.toString(16));
+}
+</script>
+</head>
+<body>
+<form onsubmit="submit_answer(event)">
+<input type="text" name="answer"/>
+<input type="submit" value="Submit"/>
+<p id="response"></p>
+</form>
+</body>
+</html>
+

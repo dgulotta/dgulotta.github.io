@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <script langage="javascript">
+  function slide(e) {
+  	var dist = e.target.value.toString();
+	ename = dist.padStart(2,'0');
+  	var fname = `paths${ename}a.svg`;
+  	document.getElementById("ramanujan").setAttribute("src",`paths${ename}a.svg`);
+  	document.getElementById("rect").setAttribute("src",`paths${ename}.svg`);
+	document.getElementById("dist").innerText=dist;
+  }
+  </script>
+  </head>
+  <body>
+  <p>How many paths are there of distance <em>d</em> from a fixed vertex to each other vertex?</p>
+  <div><img src="non_ramanujan20.svg" height="339px" width="407px"/><img id="rect" height="339px" width="407px" src="paths00.svg"></img></div>
+  <div><img src="ramanujan20.svg"/><img id="ramanujan" height="425px" width="407px" src="paths00a.svg"></img></div>
+  <input type="range" min="0" max="15" value="0" id="slider" oninput="slide(event);" style="width:407px;"/><p><em>d</em>=<span id="dist">0</span></p>
+  </body>
+</html>
