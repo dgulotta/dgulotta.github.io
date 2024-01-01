@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>MATH 2270 Linear Algebra (Spring 2024)</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="main.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">MATH 2270 Linear Algebra (Spring 2024)</h1>
+</header>
+<dl>
+<dt>Instructor</dt>
+<dd>
+Daniel Gulotta, dgulotta@math.utah.edu
+</dd>
+<dt>Location and time</dt>
+<dd>
+MTWF 12:55-1:45pm in WEB 2250
+</dd>
+<dt>Course Description</dt>
+<dd>
+Euclidean space, linear systems, Gaussian elimination, determinants,
+inverses, vector spaces, linear transformations, quadratic forms, least
+squares and linear programming, eigenvalues and eigenvectors,
+diagonalization.
+</dd>
+<dt>Prerequisites</dt>
+<dd>
+‘C’ or better in MATH 1260 OR MATH 1320 OR MATH 1321 OR MATH 2210 OR
+MATH 2310 OR ‘B’ or better in MATH 1220 OR AP Calculus BC score of 5
+</dd>
+<dt>Credits</dt>
+<dd>
+4
+</dd>
+<dt>Textbook</dt>
+<dd>
+<em>Linear Algebra and its Applications, 6th. ed.</em> by Lay, Lay, and
+McDonald. We will be using an electronic version via the University’s
+Inclusive Access Program. Click on the Bookshelf tab in Canvas to view
+the textbook. If you obtain a copy of the textbook from another source,
+please make sure it is the <a
+href="https://www.pearson.com/en-us/subject-catalog/p/linear-algebra-and-its-applications/P200000006235/9780136880929">regular
+6th edition</a> and not the <a
+href="https://www.pearson.com/store/p/linear-algebra-and-its-applications-pearson-etext-global-edition/GPROG_A103000278113_learnerau-availability/9781292419046">global
+edition</a>. The global edition has different homework problems.
+</dd>
+<dt>Canvas</dt>
+<dd>
+To access Canvas, visit https://utah.instructure.com. Canvas will be
+used for announcements, homework assignments and other course materials,
+and grades.
+</dd>
+<dt>Office hours</dt>
+<dd>
+TBA
+</dd>
+<dt>Grader</dt>
+<dd>
+TBA
+</dd>
+<dt>Grading</dt>
+<dd>
+The following categories contribute to the course grade.
+</dd>
+</dl>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Homework</td>
+<td style="text-align: left;">39%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Exams</td>
+<td style="text-align: left;">40%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Final</td>
+<td style="text-align: left;">21%</td>
+</tr>
+</tbody>
+</table>
+<p>Grading is according to the following fixed scale.</p>
+<table>
+<thead>
+<tr class="header">
+<th>≥90%</th>
+<th>≥85%</th>
+<th>≥80%</th>
+<th>≥75%</th>
+<th>≥70%</th>
+<th>≥65%</th>
+<th>≥60%</th>
+<th>≥55%</th>
+<th>≥50%</th>
+<th>≥45%</th>
+<th>≥40%</th>
+<th>else</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>A-</td>
+<td>B+</td>
+<td>B</td>
+<td>B-</td>
+<td>C+</td>
+<td>C</td>
+<td>C-</td>
+<td>D+</td>
+<td>D</td>
+<td>D-</td>
+<td>E</td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dt>Exams</dt>
+<dd>
+The dates of the midterm exams are shown in the schedule below. If you
+need to miss an exam for a university-approved reason, please contact me
+at least a week in advance to make alternate arrangements.
+</dd>
+<dt>Final exam</dt>
+<dd>
+The final exam will be held on Tuesday, April 30, 1-3pm in WEB 2250.
+</dd>
+<dt>Homework</dt>
+<dd>
+Homework will be due Mondays at 11:59pm. Homework should be uploaded to
+the Gradescope tab in Canvas. There will be 14 homework assignments, and
+the lowest score will be dropped. You are expected to turn in
+assignments on time. If you need to turn in an assignment late due to
+extenuating circumstances, please contact me.
+</dd>
+</dl>
+<h2 id="tentative-schedule">Tentative Schedule</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Date</th>
+<th style="text-align: left;">Topic</th>
+<th>Textbook</th>
+<th>HW Due</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1/8</td>
+<td style="text-align: left;">Introduction</td>
+<td>1.1</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1/9</td>
+<td style="text-align: left;">Systems of linear equations</td>
+<td>1.1</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>1/10</td>
+<td style="text-align: left;">Row reduction and echelon forms</td>
+<td>1.2</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1/12</td>
+<td style="text-align: left;">How to solve a linear system</td>
+<td>1.2</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>1/15</td>
+<td style="text-align: left;">NO CLASS</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1/16</td>
+<td style="text-align: left;">Vector equations</td>
+<td>1.3</td>
+<td>#1</td>
+</tr>
+<tr class="odd">
+<td>1/17</td>
+<td style="text-align: left;">The matrix equation Ax=b</td>
+<td>1.4</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1/19</td>
+<td style="text-align: left;">Solution sets of linear systems</td>
+<td>1.5</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>1/22</td>
+<td style="text-align: left;">Linear independence</td>
+<td>1.7</td>
+<td>#2</td>
+</tr>
+<tr class="even">
+<td>1/23</td>
+<td style="text-align: left;">Linear independence</td>
+<td>1.7</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>1/24</td>
+<td style="text-align: left;">Linear transforms and their matrices</td>
+<td>1.8, 1.9</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1/26</td>
+<td style="text-align: left;">Matrix operations</td>
+<td>2.1</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>1/29</td>
+<td style="text-align: left;">Review</td>
+<td></td>
+<td>#3</td>
+</tr>
+<tr class="even">
+<td>1/30</td>
+<td style="text-align: left;">Exam on chapter 1</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>1/31</td>
+<td style="text-align: left;">The inverse of a matrix</td>
+<td>2.2</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2/2</td>
+<td style="text-align: left;">Characterizations of invertible
+matrices</td>
+<td>2.3</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2/5</td>
+<td style="text-align: left;">Partitioned matrices, matrix
+factorizations</td>
+<td>2.4, 2.5</td>
+<td>#4</td>
+</tr>
+<tr class="even">
+<td>2/6</td>
+<td style="text-align: left;">Matrix factorizations</td>
+<td>2.5</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2/7</td>
+<td style="text-align: left;">Determinants</td>
+<td>3.1</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2/9</td>
+<td style="text-align: left;">Properties of determinants</td>
+<td>3.2</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2/12</td>
+<td style="text-align: left;">Cramer’s rule</td>
+<td>3.3</td>
+<td>#5</td>
+</tr>
+<tr class="even">
+<td>2/13</td>
+<td style="text-align: left;">Review</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2/14</td>
+<td style="text-align: left;">Exam on chapters 2-3</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2/16</td>
+<td style="text-align: left;">Vector spaces and subspaces</td>
+<td>4.1</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2/19</td>
+<td style="text-align: left;">NO CLASS</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2/20</td>
+<td style="text-align: left;">Null spaces etc.</td>
+<td>4.2</td>
+<td>#6</td>
+</tr>
+<tr class="odd">
+<td>2/21</td>
+<td style="text-align: left;">Basis and dimension</td>
+<td>4.3, 4.5</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2/23</td>
+<td style="text-align: left;">Coordinate systems</td>
+<td>4.4</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2/26</td>
+<td style="text-align: left;">Change of basis</td>
+<td>4.6</td>
+<td>#7</td>
+</tr>
+<tr class="even">
+<td>2/27</td>
+<td style="text-align: left;">Difference equations</td>
+<td>4.8</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2/28</td>
+<td style="text-align: left;">Eigenvectors and eigenvalues</td>
+<td>5.1</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>3/1</td>
+<td style="text-align: left;">The characteristic equation</td>
+<td>5.2</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3/11</td>
+<td style="text-align: left;">Diagonalization</td>
+<td>5.3</td>
+<td>#8</td>
+</tr>
+<tr class="even">
+<td>3/12</td>
+<td style="text-align: left;">More on eigenvalues and eigenvectors</td>
+<td>5.4-5.5</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3/13</td>
+<td style="text-align: left;">The Gershgorin theorem</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>3/15</td>
+<td style="text-align: left;">Markov chains</td>
+<td>5.9</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3/18</td>
+<td style="text-align: left;">TBA</td>
+<td></td>
+<td>#9</td>
+</tr>
+<tr class="even">
+<td>3/19</td>
+<td style="text-align: left;">Review</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3/20</td>
+<td style="text-align: left;">Exam on chapters 4-5</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>3/22</td>
+<td style="text-align: left;">Inner product, length, orthogonality</td>
+<td>6.1</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3/25</td>
+<td style="text-align: left;">Orthogonal sets</td>
+<td>6.2</td>
+<td>#10</td>
+</tr>
+<tr class="even">
+<td>3/26</td>
+<td style="text-align: left;">Orthogonal projections</td>
+<td>6.3</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3/27</td>
+<td style="text-align: left;">The Gram-Schmidt process</td>
+<td>6.4</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>3/29</td>
+<td style="text-align: left;">Least-squares problems</td>
+<td>6.5</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>4/1</td>
+<td style="text-align: left;">Linear models</td>
+<td>6.6</td>
+<td>#11</td>
+</tr>
+<tr class="even">
+<td>4/2</td>
+<td style="text-align: left;">Inner product spaces</td>
+<td>6.7</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>4/3</td>
+<td style="text-align: left;">Applications of inner product spaces</td>
+<td>6.8</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>4/5</td>
+<td style="text-align: left;">Diagonalization of symmetric matrices</td>
+<td>7.1</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>4/8</td>
+<td style="text-align: left;">Singular value decomposition</td>
+<td>7.4</td>
+<td>#12</td>
+</tr>
+<tr class="even">
+<td>4/9</td>
+<td style="text-align: left;">More on singular value decomposition</td>
+<td>7.4</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>4/10</td>
+<td style="text-align: left;">Quadratic forms</td>
+<td>7.2</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>4/12</td>
+<td style="text-align: left;">Constrained optimization</td>
+<td>7.3</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>4/15</td>
+<td style="text-align: left;">TBA</td>
+<td></td>
+<td>#13</td>
+</tr>
+<tr class="even">
+<td>4/16</td>
+<td style="text-align: left;">Review</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>4/17</td>
+<td style="text-align: left;">Exam on chapters 6-7</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>4/19</td>
+<td style="text-align: left;">TBA</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>4/22</td>
+<td style="text-align: left;">Review</td>
+<td></td>
+<td>#14</td>
+</tr>
+<tr class="even">
+<td>4/23</td>
+<td style="text-align: left;">Review</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="tutoring-resources">Tutoring Resources</h2>
+<p><strong>Math Student Center:</strong> The math tutoring center is
+available free of charge to all university students. The tutoring center
+is open Monday-Thursday 8:00am-8:00pm, and Friday 8:00am-6:00pm. More
+information is available at:
+https://www.math.utah.edu/undergraduate/mathcenter.php.</p>
+<p><strong>ASUU Learning Center:</strong> The Learning Center offers
+free tutoring and other services. More information is available at:
+https://learningcenter.utah.edu/.</p>
+<h2 id="student-information">Student Information</h2>
+<p><strong>Wellness Statement:</strong> Personal concerns such as
+stress, anxiety, relationship difficulties, depression, cross-cultural
+differences, etc., can interfere with a students ability to succeed and
+thrive at the University of Utah. For helpful resources contact the
+Center for Student Wellness at www.wellness.utah.edu or
+801-581-7776.</p>
+<p><strong>The Americans with Disabilities Act:</strong> The University
+of Utah seeks to provide equal access to its programs, services and
+activities for people with disabilities. If you will need accommodations
+in the class, reasonable prior notice needs to be given to the Center
+for Disability &amp; Access, 162 Olpin Union Building, 801-581-5020,
+https://disability.utah.edu/. CDA will work with you and the instructor
+to make arrangements for accommodations. All written information in this
+course can be made available in alternative format with prior
+notification to the Center for Disability &amp; Access.</p>
+<p><strong>Addressing Sexual Misconduct:</strong> Title IX makes it
+clear that violence and harassment based on sex and gender (which
+includes sexual orientation and gender identity/expression) is a Civil
+Rights offense subject to the same kinds of accountability and the same
+kinds of support applied to offenses against other protected categories
+such as race, national origin, color, religion, age, status as a person
+with a disability, veteran’s status or genetic information. If you or
+someone you know has been harassed or assaulted on the basis of your
+sex, office for equal opportunity and affirmative action including
+sexual orientation or gender identity/expression, you are encouraged to
+report it to the University’s Title IX Coordinator; Director, Office of
+Equal Opportunity and Affirmative Action, 135 Park Building,
+801-581-8365, https://oeo.utah.edu/contact-us/index.php or to the Office
+of the Dean of Students, 270 Union Building, 801-581-7066,
+https://deanofstudents.utah.edu/. For support and confidential
+consultation, contact the Center for Student Wellness, 426 SSB,
+801-581-7776. To report to police, contact the Department of Public
+Safety, 801-585-2677(COPS), https://police.utah.edu/.</p>
+<p><strong>Campus Safety:</strong> The University of Utah values the
+safety of all campus community members. To report suspicious activity or
+to request a courtesy escort, call campus police at 801-585-COPS (801-
+585-2677). You will receive important emergency alerts and safety
+messages regarding campus safety via text message. For more information
+regarding safety and to view available training resources, including
+helpful videos, visit safeu.utah.edu</p>
+<p><strong>University Counseling Center:</strong> The UCC staff is
+committed to supporting the mental health needs of our campus community.
+Their phone number is 801-581-6826. Their hours are Monday- Friday,
+8:00am-5:00pm. For after-hours emergencies, contact the 24/7 Crisis
+Line: 801-587-3000 . More information is at
+https://counselingcenter.utah.edu/.</p>
+<p><strong>Office of the Dean of Students:</strong> The Office of the
+Dean of Students is¡ dedicated to being a resource to students through
+support, advocacy, involvement, and accountability. It serves as a
+support for students facing challenges to their success as students, and
+assists with the interpretation of University policy and regulations. To
+contact the Office of the Dean of Students, please email
+deanofstudents@utah.edu or call 801-581-7066. There is more information
+at https://deanofstudents.utah.edu/</p>
+</body>
+</html>
