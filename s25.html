@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>MATH 6370 p-adic Hodge Theory (Spring 2025)</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">MATH 6370 p-adic Hodge Theory (Spring 2025)</h1>
+</header>
+<dl>
+<dt>Instructor</dt>
+<dd>
+Daniel Gulotta, dgulotta@math.utah.edu
+</dd>
+<dt>Location and time</dt>
+<dd>
+MWF 9:40-10:30 in AEB 306
+</dd>
+<dt>Credits</dt>
+<dd>
+3
+</dd>
+<dt>Office hours</dt>
+<dd>
+time TBA in JWB 106
+</dd>
+<dt>Grading</dt>
+<dd>
+If you are an undergraduate and need a grade for the course, let me
+know.
+</dd>
+</dl>
+<h2 id="references">References</h2>
+<p>We will cover chapters 1-9 of [BC] and chapters 1-8 of [FO] (these
+two references cover roughly the same material), chapters 2-13 of [SW],
+and some additional topics, likely including [S], [BS], [BL].</p>
+<ul>
+<li>[BC] O. Brinon and B. Conrad, <a
+href="https://math.stanford.edu/~conrad/papers/notes.pdf">CMI summer
+school notes on <em>p</em>-adic Hodge theory</a></li>
+<li>[BL] B. Bhatt and J. Lurie, <a
+href="https://arxiv.org/pdf/2201.06120">Absolute prismatic
+cohomology</a></li>
+<li>[BS] B. Bhatt and P. Scholze, <a
+href="https://arxiv.org/pdf/1905.08229">Prisms and prismatic
+cohomology</a></li>
+<li>[FO] J.-M. Fontaine and Y. Ouyang, <a
+href="http://staff.ustc.edu.cn/~yiouyang/galoisrep.pdf">Theory of
+<em>p</em>-adic Galois representations</a></li>
+<li>[S] P. Scholze, <a
+href="https://people.mpim-bonn.mpg.de/scholze/pAdicHodgeTheory.pdf"><em>p</em>-adic
+Hodge theory for rigid analytic varieties</a></li>
+<li>[SW] P. Scholze and J. Weinstein, <a
+href="https://people.mpim-bonn.mpg.de/scholze/Berkeley.pdf">Berkeley
+lectures on <em>p</em>-adic geometry</a></li>
+</ul>
+<p>If you are looking for exercises, there are some in [BC] and in these
+two references:</p>
+<ul>
+<li>H. Diao, <a
+href="https://swc-math.github.io/aws/2017/2017DiaoProblems.pdf">Period
+rings and period sheaves</a></li>
+<li>Y. Mieda, <a
+href="https://swc-math.github.io/aws/2017/2017MiedaProblems.pdf">Adic
+spaces and perfectoid spaces</a></li>
+</ul>
+<p><a href="tt20.html">Here</a> is a link to a course on <em>p</em>-adic
+Hodge theory that I taught in 2020.</p>
+<h2 id="tentative-schedule">Tentative Schedule</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Date</th>
+<th style="text-align: left;">Topic</th>
+<th style="text-align: left;">References</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1/6</td>
+<td style="text-align: left;">Overview</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td>1/8</td>
+<td style="text-align: left;">Infinite Galois theory</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td>1/10</td>
+<td style="text-align: left;">Examples of Galois representations</td>
+<td style="text-align: left;">[BC] 1, [FO] 2</td>
+</tr>
+<tr class="even">
+<td>1/13</td>
+<td style="text-align: left;">φ-modules</td>
+<td style="text-align: left;">[BC] 3, [FO] 2.2-2.3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="student-information">Student Information</h2>
+<p><strong>The Americans with Disabilities Act (ADA):</strong> The
+University of Utah seeks to provide equal access to its programs,
+services and activities for people with disabilities.</p>
+<p>All written information in this course can be made available in an
+alternative format with prior notification to the Center for Disability
+&amp; Access (CDA). CDA will work with you and the instructor to make
+arrangements for accommodations. Prior notice is appreciated. To read
+the full accommodations policy for the University of Utah, please see
+Section Q of the Instruction &amp; Evaluation regulations.</p>
+<p>In compliance with ADA requirements, some students may need to record
+course content. Any recordings of course content are for personal use
+only, should not be shared, and should never be made publicly available.
+In addition, recordings must be destroyed at the conclusion of the
+course.</p>
+<p>If you will need accommodations in this class, or for more
+information about what support they provide, contact:</p>
+<p>Center for Disability &amp; Access<br />
+801-581-5020<br />
+disability.utah.edu<br />
+162 Union Building<br />
+200 S. Central Campus Dr.<br />
+Salt Lake City, UT 84112</p>
+<p><strong>Safety at the U:</strong> The University of Utah values the
+safety of all campus community members. You will receive important
+emergency alerts and safety messages regarding campus safety via text
+message. For more safety information and to view available training
+resources, including helpful videos, visit safeu.utah.edu.</p>
+<p>To report suspicious activity or to request a courtesy escort,
+contact:</p>
+<p>Campus Police &amp; Department of Public Safety<br />
+801-585-COPS (801-585-2677)<br />
+dps.utah.edu<br />
+1735 E. S. Campus Dr.<br />
+Salt Lake City, UT 84112</p>
+<p><strong>Addressing Sexual Misconduct:</strong> Title IX makes it
+clear that violence and harassment based on sex and gender (which
+includes sexual orientation and gender identity/expression) is a civil
+rights offense subject to the same kinds of accountability and the same
+kinds of support applied to offenses against other protected categories
+such as race, national origin, color, religion, age, status as a person
+with a disability, veteran’s status, or genetic information.</p>
+<p>If you or someone you know has been harassed or assaulted, you are
+encouraged to report it to university officials:</p>
+<p>Title IX Coordinator &amp; Office of Equal Opportunity and
+Affirmative Action<br />
+801-581-8365<br />
+oeo.utah.edu<br />
+135 Park Building<br />
+201 Presidents’ Cir.<br />
+Salt Lake City, UT 84112</p>
+<p>Office of the Dean of Students<br />
+801-581-7066<br />
+deanofstudents.utah.edu<br />
+270 Union Building<br />
+200 S. Central Campus Dr.<br />
+Salt Lake City, UT 84112</p>
+<p>To file a police report, contact:</p>
+<p>Campus Police &amp; Department of Public Safety<br />
+801-585-COPS (801-585-2677)<br />
+dps.utah.edu<br />
+1735 E. S. Campus Dr.<br />
+Salt Lake City, UT 84112</p>
+<p>If you do not feel comfortable reporting to authorities, the U’s
+Victim-Survivor Advocates provide free, confidential, and
+trauma-informed support services to students, faculty, and staff who
+have experienced interpersonal violence.</p>
+<p>To privately explore options and resources available to you with an
+advocate, contact:</p>
+<p>Center for Student Wellness<br />
+801-581-7776<br />
+wellness.utah.edu<br />
+328 Student Services Building<br />
+201 S. 1460 E.<br />
+Salt Lake City, UT 84112</p>
+<p><strong>Academic Misconduct:</strong> It is expected that students
+comply with University of Utah policies regarding academic honesty,
+including but not limited to refraining from cheating, plagiarizing,
+misrepresenting one’s work, and/or inappropriately collaborating. This
+includes the use of generative artificial intelligence (AI) tools
+without citation, documentation, or authorization. Students are expected
+to adhere to the prescribed professional and ethical standards of the
+profession/discipline for which they are preparing. Any student who
+engages in academic dishonesty or who violates the professional and
+ethical standards for their profession/discipline may be subject to
+academic sanctions as per the University of Utah’s Student Code: Policy
+6-410: Student Academic Performance, Academic Conduct, and Professional
+and Ethical Conduct.</p>
+<p>Plagiarism and cheating are serious offenses and may be punished by
+failure on an individual assignment, and/or failure in the course.
+Academic misconduct, according to the University of Utah Student
+Code:</p>
+<p>“…Includes, but is not limited to, cheating, misrepresenting one’s
+work, inappropriately collaborating, plagiarism, and fabrication or
+falsification of information…. It also includes facilitating academic
+misconduct by intentionally helping or attempting to help another to
+commit an act of academic misconduct.”</p>
+<p>For details on plagiarism and other important course conduct issues,
+see the U’s Code of Student Rights and Responsibilities.</p>
+</body>
+</html>
